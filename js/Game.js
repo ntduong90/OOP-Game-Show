@@ -36,7 +36,7 @@ class Game {
 
     getRandomPhrase() {
         const randomNumber = Math.floor((Math.random() * 5));
-        return game.phrases[randomNumber];
+        return game.phrases[randomNumber].phrase;
     }
 
     handleInteraction() {
