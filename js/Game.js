@@ -27,11 +27,14 @@ class Game {
             }
             
         ];
-        this.activePhrase = null;
+        this.activePhrase = phrase;
     }
 
     startGame() {
-
+        const screenOverlay = document.getElementById("overlay");
+        const overlayHide = screenOverlay.style.display = "none";
+        game.getRandomPhrase();
+        phrase.addPhraseToDisplay();
     }
 
     getRandomPhrase() {

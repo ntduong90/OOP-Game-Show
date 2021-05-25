@@ -5,4 +5,6 @@
 const game = new Game();
 const phrase = new Phrase();
 
-console.log(phrase.addPhraseToDisplay());
+game.startGame();
+console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
+

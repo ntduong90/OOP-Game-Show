@@ -11,30 +11,22 @@ class Phrase {
     addPhraseToDisplay() {
         const randomPhrase = game.getRandomPhrase();
         const lettersArr = randomPhrase.split("");
-        const lettersArrLength = lettersArr.length;
-
-        //DOM
         const phraseDiv = document.getElementById("phrase");
         const phraseUl = phraseDiv.firstElementChild;
         
-        
-        function createList() {
-            const createLi = document.createElement("li");
-            phraseUl.appendChild(createLi);
-        }
-        
-        for (let i = 0; i <= lettersArrLength; i++) {
-            createList();
-        }
-        
-        
-        //iterate through letters array and create list elements
-        //for each letter/spaces in array.
-        // lettersArr.forEach(letter => {
+        lettersArr.forEach(letter => {
             
-        // });
-        
-        
+            const createLi = document.createElement("li");
+            const createdLi = phraseUl.appendChild(createLi); 
+            
+            if (letter === " ") {
+                createdLi.className = "space";
+            } else {
+                createdLi.className = `hide letter ${letter}`;
+                createdLi.textContent = `${letter}`;
+            }
+              
+        })   
     }
 
     checkLetter() {
