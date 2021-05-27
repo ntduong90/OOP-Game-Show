@@ -27,19 +27,23 @@ class Game {
             }
             
         ];
-        this.activePhrase = phrase;
-    }
-
-    startGame() {
-        const screenOverlay = document.getElementById("overlay");
-        const overlayHide = screenOverlay.style.display = "none";
-        game.getRandomPhrase();
-        phrase.addPhraseToDisplay();
+        this.activePhrase = null;
     }
 
     getRandomPhrase() {
         const randomNumber = Math.floor((Math.random() * 5));
-        return game.phrases[randomNumber].phrase;
+        return game.phrases[randomNumber];
+    }
+
+    startGame() {
+        document.getElementById("overlay").style.display = "none";
+        this.activePhrase = game.getRandomPhrase();
+        phrase.addPhraseToDisplay();
+        
+        
+        
+        
+        
     }
 
     handleInteraction() {

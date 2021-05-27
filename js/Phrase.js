@@ -9,7 +9,7 @@ class Phrase {
     }
 
     addPhraseToDisplay() {
-        const randomPhrase = game.getRandomPhrase();
+        const randomPhrase = game.activePhrase.phrase;
         const lettersArr = randomPhrase.split("");
         const phraseDiv = document.getElementById("phrase");
         const phraseUl = phraseDiv.firstElementChild;
